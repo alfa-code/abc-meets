@@ -1,0 +1,4 @@
+.vscode
+
+# Не сохраняем билд http клиента на С
+http_client
