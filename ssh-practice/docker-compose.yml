@@ -1,0 +1,30 @@
+# Этот compose файл создает два сервера на базе ubuntu и установленном ssh server демоне
+#
+#
+#
+#
+#
+version: '3.8'
+services:
+  # Название первой виртуальной машины
+  ssh-server1:
+    image: rastasheep/ubuntu-sshd:18.04
+    container_name: ssh_server1
+    restart: always
+    # К виртуальной машине подключаться по порту 2222
+    ports:
+      - "2222:22"
+    environment:
+      # пароль пользователя root
+      - ROOT_PASSWORD=rootpassword1
+  # Название второй виртуальной машины
+  ssh-server2:
+    image: rastasheep/ubuntu-sshd:18.04
+    container_name: ssh_server2
+    restart: always
+    # К виртуальной машине подключаться по порту 2223
+    ports:
+      - "2223:22"
+    environment:
+      # пароль пользователя root
+      - ROOT_PASSWORD=rootpassword2
