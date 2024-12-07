@@ -1,4 +1,6 @@
 .vscode
+._*
+.DS_Store
 
 # Не сохраняем билд http клиента на С
 http_client
